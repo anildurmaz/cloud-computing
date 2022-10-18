@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="widh=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+      table{
+        border-radius: 10px;
+        border: 5px double #032d25;
+      }
+      th,td{
+        border: 3px groove #032d25;
+      }
+      .styled-table {
+        border-collapse: collapse;
+        margin:25px 0;
+        font-size: 1.3em;
+        box-shadow:0 0 20px rgba(0,0,0,0.15);
+        min-width: 400px;
+      }
+      .styled-table thead tr{
+        background-color: #009879;
+        color: #ffffff;
+        text-align:left;
+      }
+      .styled-table th,
+      .styled-table td{
+        padding: 13px 17px;
+      }
+      .styled-table tbody tr{
+        border-bottom: 2px solid #dddddd;
+
+      }
+      .styled-table tbody tr:nth-of-type(even){
+        background-color: #f3f3f3;
+      }
+      .styled-table tbody tr:last-of-type{
+        border-bottom: 3px solid #009879;
+      }
+      .styled-table tbody tr.row{
+        font-weight: bold;
+        color: #009879;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <table class = "styled-table">
+    <thead>
+      <tr>
+          {% for header in heading %}
+          <th>{{ header }}</th>
+          {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+          {% for row in data %}
+          <tr class="row">
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+          </tr>
+          {% endfor %}
+    </tbody>
+    </table>
+
+  </body>
+</html>
